@@ -48,6 +48,7 @@ const EditPopup = ({ cardId, onClose, onCardDestroy, onCardLoad, onCardUpdate })
       alert(`Destrucion Failed! Error: ${error.message}`);
     });
   };
+
   const isLoading = isNil(task);
 
   return (

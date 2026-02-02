@@ -35,8 +35,8 @@ gem 'kaminari'
 gem 'ransack', '3.2.1'
 gem 'responders'
 gem 'active_model_serializers'
-gem 'webpacker-react', "~> 1.0.0.beta.1"
-
+gem 'webpacker-react', '~> 1.0.0.beta.1'
+gem 'js-routes'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

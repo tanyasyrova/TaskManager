@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
-  validates :email, presence: true, 
-                    format: { with: /\A[^@\s]+@[^@\s]+\z/}
+  validates :email, presence: true,
+                    format: { with: /\A[^@\s]+@[^@\s]+\z/ }
   validates :email, uniqueness: true
 end

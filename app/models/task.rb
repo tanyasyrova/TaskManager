@@ -1,5 +1,4 @@
 class Task < ApplicationRecord
-  
   belongs_to :author, class_name: 'User'
   belongs_to :assignee, class_name: 'User', optional: true
 
@@ -29,9 +28,8 @@ class Task < ApplicationRecord
       transition in_code_review: :ready_for_release
     end
 
-    event :release do 
+    event :release do
       transition ready_for_release: :released
     end
-    
   end
 end

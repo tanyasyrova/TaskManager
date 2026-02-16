@@ -11,6 +11,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.4",
+    "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.13.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "core-js": "^3.32.2",
@@ -20,7 +21,9 @@
     "ramda": "^0.32.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.9",
     "react-select": "^5.10.2",
+    "redux": "^4.2.1",
     "regenerator-runtime": "^0.13.11",
     "styled-components": "^6.1.19",
     "webpacker-react": "^0.3.2"

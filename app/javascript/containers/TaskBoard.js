@@ -31,6 +31,26 @@ const TaskBoard = () => {
     loadBoard();
   }, []);
 
+  useEffect(() => {
+  const colIds = (board.columns || []).map((c) => c?.id);
+  const missingCols = colIds.filter((id) => id == null);
+  if (missingCols.length) console.warn('Columns without id:', missingCols.length);
+
+  const dupCols = colIds.filter((id, i) => id != null && colIds.indexOf(id) !== i);
+  if (dupCols.length) console.warn('Duplicate column ids:', dupCols);
+
+  const cardIds = [];
+  (board.columns || []).forEach((col) => (col.cards || []).forEach((card) => cardIds.push(card?.id)));
+
+  const missingCards = cardIds.filter((id) => id == null);
+  if (missingCards.length) console.warn('Cards without id:', missingCards.length);
+
+  const dupCards = cardIds.filter((id, i) => id != null && cardIds.indexOf(id) !== i);
+  if (dupCards.length) console.warn('Duplicate card ids:', dupCards);
+}, [board]);
+
+
+
   const handleOpenAddPopup = () => {
     setMode(MODES.ADD);
   };
@@ -102,7 +122,7 @@ const TaskBoard = () => {
         {board}
       </KanbanBoard>
 
-      {mode === MODES.ADD && <AddPopup onCreateCard={handleTaskCreate} onClose={handleClose} />}
+      {mode === MODES.ADD && <AddPopup onCardCreate={handleTaskCreate} onClose={handleClose} />}
       {mode === MODES.EDIT && (
         <EditPopup
           onLoadCard={handleTaskLoad}

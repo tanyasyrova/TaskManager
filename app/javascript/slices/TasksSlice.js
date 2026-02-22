@@ -19,7 +19,7 @@ const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    /*loadColumnSuccess(state, { payload }) {
+    loadColumnSuccess(state, { payload }) {
       const { items, meta, columnId } = payload;
       const column = state.board.columns.find(propEq('id', columnId));
 
@@ -35,9 +35,9 @@ const tasksSlice = createSlice({
       });
 
       return state;
-    },*/
+    },
 
-    loadColumnSuccess(state, { payload }) {
+    /*loadColumnSuccess(state, { payload }) {
       const { items, meta, columnId } = payload;
 
       // 1) пробуем строго (через propEq)
@@ -78,11 +78,11 @@ const tasksSlice = createSlice({
       });
 
       return state;
-    },
+    },*/
 
 
 
-    /*loadColumnMoreSuccess(state, { payload }) {
+    loadColumnMoreSuccess(state, { payload }) {
       const { items, meta, columnId } = payload;
       const column = state.board.columns.find(propEq('id', columnId));
       
@@ -97,7 +97,7 @@ const tasksSlice = createSlice({
       });
 
       return state;
-    },*/
+    },
   },
 });
 

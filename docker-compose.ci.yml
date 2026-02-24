@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:10.3-alpine
+
+  ci:
+    build: .
+    depends_on:
+      - db
+    environment:
+      COVERAGE: true
+      RAILS_ENV: test
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
+      NODE_OPTIONS: --openssl-legacy-provider
+    command: >
+      sh -c "bundle exec rails db:create db:migrate && bundle exec rails webpacker:compile && bundle exec rake test"

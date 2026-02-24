@@ -23,6 +23,7 @@ gem 'active_model_serializers'
 gem 'js-routes'
 gem 'webpacker-react', '~> 1.0.0.beta.1'
 
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -51,6 +52,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'webdrivers'
+  gem 'minitest', '~> 5.18'
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
 end

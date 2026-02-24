@@ -1,5 +1,3 @@
-version: '2'
-
 services:
   db:
     image: postgres:10.3-alpine
@@ -13,10 +11,8 @@ services:
       RAILS_ENV: test
       DATABASE_HOST: db
       DATABASE_USERNAME: postgres
+      NODE_OPTIONS: --openssl-legacy-provider
     volumes:
       - .:/task_manager
-    command: sh -c "
-    bundle exec rails db:create db:migrate &&
-    bundle exec rails webpacker:compile &&
-    bundle exec rake test
-    "
+    command: >
+      sh -c "bundle exec rails db:create db:migrate && bundle exec rails webpacker:compile && bundle exec rake test"
